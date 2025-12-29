@@ -1,0 +1,427 @@
+
+---
+
+## 2) `index.html` (apresentação do material produzido)
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plano de Aula Interativo e Personalizado — Ecossistema de IA</title>
+  <meta name="description" content="Webpage de apresentação do material: plano de aula, atividades interativas, personalização por perfis, avaliação e registro do processo com IAs generativas." />
+
+  <style>
+    :root{
+      /* Paleta base (e variações em torno dela) */
+      --c-primary: #0786b4;
+      --c-primary-700: #056c91;
+      --c-primary-900: #034b65;
+      --c-primary-100: #e6f4fa;
+      --c-ink: #0b1220;
+      --c-muted: #5b667a;
+      --c-bg: #ffffff;
+      --c-card: #ffffff;
+      --c-border: #d9e3ea;
+      --shadow: 0 10px 30px rgba(3, 75, 101, 0.12);
+      --radius: 14px;
+      --maxw: 1080px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      color: var(--c-ink);
+      background: linear-gradient(180deg, var(--c-primary-100), #fff 35%);
+    }
+
+    a{ color: var(--c-primary); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 28px 18px 70px; }
+    .topbar{
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.75);
+      border-bottom: 1px solid rgba(217,227,234,0.8);
+      z-index: 10;
+    }
+    .topbar .wrap{ padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .brand{
+      display: flex; align-items: center; gap: 10px; min-width: 240px;
+      font-weight: 800; letter-spacing: .2px;
+    }
+    .dot{ width: 12px; height: 12px; border-radius: 999px; background: var(--c-primary); box-shadow: 0 0 0 4px rgba(7,134,180,0.18); }
+    .nav{
+      display: flex; flex-wrap: wrap; gap: 10px 14px; justify-content: flex-end;
+      font-size: 14px;
+    }
+    .pill{
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--c-border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+    }
+    .pill strong{ color: var(--c-primary-900); font-weight: 700; }
+
+    header.hero{
+      padding: 28px 0 18px;
+    }
+    .hero-grid{
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+
+    .card{
+      background: var(--c-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    h1{
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.18;
+      color: var(--c-primary-900);
+    }
+    .lead{
+      margin: 0;
+      color: var(--c-muted);
+      font-size: 15.5px;
+      line-height: 1.55;
+    }
+    .kpis{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .kpi{
+      border: 1px solid var(--c-border);
+      border-radius: 12px;
+      padding: 12px;
+      background: linear-gradient(180deg, #fff, rgba(7,134,180,0.04));
+    }
+    .kpi .label{ font-size: 12px; color: var(--c-muted); margin-bottom: 6px; }
+    .kpi .value{ font-size: 14.5px; font-weight: 800; color: var(--c-primary-900); }
+
+    .btns{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn{
+      display: inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--c-border);
+      background: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn.primary{
+      border-color: rgba(7,134,180,0.35);
+      background: linear-gradient(180deg, #fff, rgba(7,134,180,0.08));
+      color: var(--c-primary-900);
+    }
+
+    section{ margin-top: 16px; }
+    h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--c-primary-900);
+    }
+    .grid-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 900px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--c-muted);
+      line-height: 1.6;
+      font-size: 14.5px;
+    }
+    .tag{
+      display:inline-flex; align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(7,134,180,0.25);
+      background: rgba(7,134,180,0.06);
+      color: var(--c-primary-900);
+      font-weight: 700;
+      font-size: 12px;
+      margin: 4px 6px 0 0;
+    }
+
+    .files{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 900px){
+      .files{ grid-template-columns: 1fr; }
+    }
+    .file{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--c-border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .file .meta{ min-width: 0; }
+    .file .meta .name{ font-weight: 800; color: var(--c-primary-900); }
+    .file .meta .desc{ margin-top: 6px; color: var(--c-muted); font-size: 13.5px; line-height: 1.45; }
+    .file .open{
+      white-space: nowrap;
+      font-weight: 800;
+      color: var(--c-primary);
+      border: 1px solid rgba(7,134,180,0.25);
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(7,134,180,0.06);
+    }
+
+    .footer{
+      margin-top: 18px;
+      color: var(--c-muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(217,227,234,0.9);
+      padding-top: 14px;
+    }
+    .small{ font-size: 12.5px; color: var(--c-muted); }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Plano de Aula + Ecossistema de IA</span>
+      </div>
+
+      <nav class="nav" aria-label="Navegação">
+        <a class="pill" href="#materiais"><strong>Materiais</strong></a>
+        <a class="pill" href="#interatividade"><strong>Interatividade</strong></a>
+        <a class="pill" href="#personalizacao"><strong>Personalização</strong></a>
+        <a class="pill" href="#avaliacao"><strong>Avaliação</strong></a>
+        <a class="pill" href="#ia"><strong>Uso de IA</strong></a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="hero" aria-label="Apresentação">
+      <div class="hero-grid">
+        <div class="card">
+          <h1>Plano de Aula Interativo e Personalizado</h1>
+          <p class="lead">
+            Esta página apresenta os materiais produzidos (plano, atividades, perfis, avaliação e registros de prompts),
+            organizados para leitura rápida e reutilização.
+          </p>
+
+          <div class="kpis" role="list" aria-label="Indicadores">
+            <div class="kpi" role="listitem">
+              <div class="label">Formato</div>
+              <div class="value">Markdown (MD) + Web (HTML) + PDF</div>
+            </div>
+            <div class="kpi" role="listitem">
+              <div class="label">Escopo</div>
+              <div class="value">Interatividade + Personalização + Avaliação</div>
+            </div>
+            <div class="kpi" role="listitem">
+              <div class="label">Processo</div>
+              <div class="value">Registro do uso de IA (prompts, validação, limitações)</div>
+            </div>
+            <div class="kpi" role="listitem">
+              <div class="label">Paleta</div>
+              <div class="value">#0786b4 (principal) + variações</div>
+            </div>
+          </div>
+
+          <div class="btns" aria-label="Acessos rápidos">
+            <a class="btn primary" href="README.md">Abrir README.md</a>
+            <a class="btn" href="docs/plano-de-aula.md">Plano de aula</a>
+            <a class="btn" href="docs/avaliacao-rubrica.md">Rubrica</a>
+            <a class="btn" href="docs/prompts.md">Prompts</a>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <span class="tag">Reprodutível</span>
+            <span class="tag">Auditável</span>
+            <span class="tag">Aplicável</span>
+            <span class="tag">Foco didático</span>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Visão geral do repositório">
+          <h2>Visão geral do repositório</h2>
+          <ul class="list">
+            <li><strong>README.md</strong>: navegação + processo com IA (inteligência artificial) generativa.</li>
+            <li><strong>docs/</strong>: materiais-base em Markdown (MD).</li>
+            <li><strong>assets/pdf/</strong>: exports e versões para impressão/compartilhamento.</li>
+            <li><strong>assets/images/</strong>: evidências visuais, diagramas e ilustrações.</li>
+          </ul>
+
+          <div style="margin-top: 12px;">
+            <div class="small">
+              Dica: para publicar esta página, habilite GitHub Pages apontando para a branch principal
+              e pasta raiz (ou /docs, se preferir).
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="materiais" aria-label="Materiais produzidos">
+      <div class="card">
+        <h2>Materiais produzidos (links cruzados)</h2>
+        <div class="files">
+          <div class="file">
+            <div class="meta">
+              <div class="name">Plano de aula</div>
+              <div class="desc">Estrutura didática, objetivos, tempo, recursos e mediação.</div>
+              <div class="small"><a href="docs/plano-de-aula.md">docs/plano-de-aula.md</a> • <a href="assets/pdf/">assets/pdf/</a></div>
+            </div>
+            <a class="open" href="docs/plano-de-aula.md">Abrir</a>
+          </div>
+
+          <div class="file">
+            <div class="meta">
+              <div class="name">Atividades interativas</div>
+              <div class="desc">2+ atividades com critérios, feedback e execução orientada.</div>
+              <div class="small"><a href="docs/atividades-interativas.md">docs/atividades-interativas.md</a></div>
+            </div>
+            <a class="open" href="docs/atividades-interativas.md">Abrir</a>
+          </div>
+
+          <div class="file">
+            <div class="meta">
+              <div class="name">Perfis e personalização</div>
+              <div class="desc">Adaptações concretas para perfis distintos de estudante.</div>
+              <div class="small"><a href="docs/perfis-de-aprendizagem.md">docs/perfis-de-aprendizagem.md</a></div>
+            </div>
+            <a class="open" href="docs/perfis-de-aprendizagem.md">Abrir</a>
+          </div>
+
+          <div class="file">
+            <div class="meta">
+              <div class="name">Avaliação e rubrica</div>
+              <div class="desc">Instrumento de avaliação (rubrica/checklist/quiz) e gabarito.</div>
+              <div class="small"><a href="docs/avaliacao-rubrica.md">docs/avaliacao-rubrica.md</a></div>
+            </div>
+            <a class="open" href="docs/avaliacao-rubrica.md">Abrir</a>
+          </div>
+
+          <div class="file">
+            <div class="meta">
+              <div class="name">Prompts e validação (IA)</div>
+              <div class="desc">Prompts principais, iterações, validação e limitações.</div>
+              <div class="small"><a href="docs/prompts.md">docs/prompts.md</a></div>
+            </div>
+            <a class="open" href="docs/prompts.md">Abrir</a>
+          </div>
+
+          <div class="file">
+            <div class="meta">
+              <div class="name">Evidências visuais</div>
+              <div class="desc">Diagramas, prints e imagens de apoio.</div>
+              <div class="small"><a href="assets/images/">assets/images/</a></div>
+            </div>
+            <a class="open" href="assets/images/">Abrir</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interatividade" aria-label="Interatividade">
+      <div class="card">
+        <h2>Interatividade</h2>
+        <p class="lead">
+          As atividades foram desenhadas para exigir ação/decisão do estudante e oferecer feedback.
+          Detalhes completos em <a href="docs/atividades-interativas.md">docs/atividades-interativas.md</a>.
+        </p>
+        <ul class="list" style="margin-top: 10px;">
+          <li>Atividade 1: <em>(descrever aqui)</em></li>
+          <li>Atividade 2: <em>(descrever aqui)</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="personalizacao" aria-label="Personalização">
+      <div class="card">
+        <h2>Personalização por perfis</h2>
+        <p class="lead">
+          O plano prevê dois perfis com adaptações concretas (ritmo, exemplos, suporte e avaliação).
+          Ver: <a href="docs/perfis-de-aprendizagem.md">docs/perfis-de-aprendizagem.md</a>.
+        </p>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="kpi">
+            <div class="label">Perfil 1</div>
+            <div class="value">(definir)</div>
+            <div class="small">(como muda: ritmo, apoio, exemplos, avaliação)</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Perfil 2</div>
+            <div class="value">(definir)</div>
+            <div class="small">(como muda: ritmo, apoio, exemplos, avaliação)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacao" aria-label="Avaliação">
+      <div class="card">
+        <h2>Avaliação</h2>
+        <p class="lead">
+          A avaliação foi construída para ser objetiva e alinhada aos objetivos de aprendizagem.
+          Instrumento e critérios em <a href="docs/avaliacao-rubrica.md">docs/avaliacao-rubrica.md</a>.
+        </p>
+        <ul class="list" style="margin-top: 10px;">
+          <li>Critérios: corretude, documentação, apresentação (ajustável conforme o contexto).</li>
+          <li>Formas: diagnóstica/formativa/somativa (conforme descrito no documento).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ia" aria-label="Uso de IA">
+      <div class="card">
+        <h2>Uso de IA (inteligência artificial) generativa</h2>
+        <p class="lead">
+          O uso de IA foi registrado com foco em rastreabilidade: ferramentas, prompts, iterações e validação.
+          Ver: <a href="docs/prompts.md">docs/prompts.md</a>.
+        </p>
+        <ul class="list" style="margin-top: 10px;">
+          <li>LLM (Large Language Model, modelo de linguagem de larga escala): rascunho/refino do plano, questões e feedback.</li>
+          <li>Gerador de imagens: capa e ilustrações (quando aplicável).</li>
+          <li>Validação: checagem humana, testes de execução, revisão de coerência e limitações.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div><strong>Links principais:</strong> <a href="README.md">README.md</a> • <a href="docs/plano-de-aula.md">Plano</a> • <a href="docs/avaliacao-rubrica.md">Rubrica</a> • <a href="docs/prompts.md">Prompts</a></div>
+      <div class="small" style="margin-top: 8px;">
+        Paleta: #0786b4 (principal) + variações. Ajuste os textos marcados como “(definir)” conforme o seu tema e público-alvo.
+      </div>
+    </div>
+  </main>
+</body>
+</html>
