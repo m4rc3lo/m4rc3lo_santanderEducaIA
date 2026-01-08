@@ -94,7 +94,7 @@ FSM organiza comportamento em estados mutuamente exclusivos com <b>transições<
 <b>Feedback:</b>  
 O site/documentação do Portugol Studio destacam recursos didáticos, depuração e suporte a bibliotecas para criação de jogos — ideal para iniciantes.
 
-<b>Referência:</b> Site oficial UNIVALI‑LITE. [Portugol Studio]
+<b>Referência:</b> Site oficial UNIVALI‑LITE. [Portugol Studio](https://univali-lite.github.io/Portugol-Studio/)
 
 <hr style="border:0; border-top:1px solid #0786b4; opacity:0.35;"/>
 
