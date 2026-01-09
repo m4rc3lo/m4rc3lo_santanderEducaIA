@@ -48,7 +48,7 @@ Este repositório consolida o material para a resolução da atividade "Desafio 
 - Atividade 02 (Portugol Studio (UNIVALI), I/O (entrada/saída)): [docs/atividade_02.md](docs/atividade_02.md)
 
 ### Avaliação
-- Rubricas (Atividades 01 e 02): [docs/rubricas_atividades.md](docs/rubricas_atividades.md)
+- Rubricas (Atividades 01 e 02): [docs/avaliacao-rubrica.md](docs/avaliacao-rubrica.md)
 
 <hr style="border:0; border-top:1px solid #0786b4; opacity:0.25;" />
 
