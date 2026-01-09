@@ -1,7 +1,7 @@
 <!-- README.md -->
 <h1 style="color:#0786b4; margin-bottom:0;">Santander - EducaIA — Aula: Pensamento Computacional e Computação Criativa (Design de Games)</h1>
 <p style="margin-top:6px;">
-Este repositório consolida o material didático de uma aula aplicada ao Bacharelado em Design de Games, com foco em
+Este repositório consolida o material para a resolução da atividade "Desafio de Projeto", proposta no curso. Material didático de uma aula aplicada ao Design de Games, com foco em
 <b>PC (pensamento computacional)</b> e <b>CC (computação criativa)</b>, incluindo texto-base, slides, atividades avaliativas e rubricas.
 </p>
 
@@ -20,35 +20,36 @@ Este repositório consolida o material didático de uma aula aplicada ao Bachare
 > Ajuste os nomes caso você tenha reorganizado diferente.
 
 - `index.html` — página que apresenta todo o material (com links e imagens)
-- `README.md` — descrição do repositório + processo de execução
-- `materiais/`
+- `readme.md` — descrição do repositório + processo de execução
+- `license.md` — licença do material
+- `docs/`
   - `texto_base.md` — texto base (PC (pensamento computacional) e CC (computação criativa))
   - `perfis-de-aprendizagem.md` — cenários de aprendizagem (perfis)
   - `slides_aula.pptx` — apresentação
-  - `plano_de_aula.md` — plano de aula completo
-  - `atividade_01.md` — atividade 01 (quiz em Markdown)
-  - `atividade_01.pdf` — atividade 01 (PDF original)
+  - `plano-de-aula.md` — plano de aula completo
+  - `atividade_01.md` — atividade 01 (quiz em Markdown)  
   - `atividade_02.md` — atividade 02 (Portugol Studio (UNIVALI))
-  - `rubricas_atividades.md` — rubricas das atividades 01 e 02
+  - `prompts.md` — rascunhos genéricos
+  - `avaliacao-rubrica.md` — rubricas das atividades 01 e 02
 - `assets/img/` — imagens ilustrativas (pensamento computacional, computação criativa, etc.)
 
 <hr style="border:0; border-top:1px solid #0786b4; opacity:0.25;" />
 
-## O que existe aqui (materiais e links)
+## O que existe aqui (docs e links)
 
 ### Base conceitual e apoio
-- Texto-base: [materiais/texto_base.md](materiais/texto_base.md)
-- Cenários de aprendizagem: [materiais/perfis-de-aprendizagem.md](materiais/perfis-de-aprendizagem.md)
-- Slides: [materiais/slides_aula.pptx](materiais/slides_aula.pptx)
-- Plano de aula: [materiais/plano_de_aula.md](materiais/plano_de_aula.md)
+- Texto-base: [docs/texto_base.md](docs/texto_base.md)
+- Cenários de aprendizagem: [docs/perfis-de-aprendizagem.md](docs/perfis-de-aprendizagem.md)
+- Slides: [docs/slides_aula.pptx](docs/slides_aula.pptx)
+- Plano de aula: [docs/plano-de-aula.md](docs/plano-de-aula.md)
 
 ### Atividades avaliativas
-- Atividade 01 (quiz em Markdown): [materiais/atividade_01.md](materiais/atividade_01.md)
-- Atividade 01 (PDF original): [materiais/atividade_01.pdf](materiais/atividade_01.pdf)
-- Atividade 02 (Portugol Studio (UNIVALI), I/O (entrada/saída)): [materiais/atividade_02.md](materiais/atividade_02.md)
+- Atividade 01 (quiz em Markdown): [docs/atividade_01.md](docs/atividade_01.md)
+- Atividade 01 (PDF original): [docs/atividade_01.pdf](docs/atividade_01.pdf)
+- Atividade 02 (Portugol Studio (UNIVALI), I/O (entrada/saída)): [docs/atividade_02.md](docs/atividade_02.md)
 
 ### Avaliação
-- Rubricas (Atividades 01 e 02): [materiais/rubricas_atividades.md](materiais/rubricas_atividades.md)
+- Rubricas (Atividades 01 e 02): [docs/rubricas_atividades.md](docs/rubricas_atividades.md)
 
 <hr style="border:0; border-top:1px solid #0786b4; opacity:0.25;" />
 
