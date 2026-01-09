@@ -45,7 +45,6 @@ Este repositório consolida o material para a resolução da atividade "Desafio 
 
 ### Atividades avaliativas
 - Atividade 01 (quiz em Markdown): [docs/atividade_01.md](docs/atividade_01.md)
-- Atividade 01 (PDF original): [docs/atividade_01.pdf](docs/atividade_01.pdf)
 - Atividade 02 (Portugol Studio (UNIVALI), I/O (entrada/saída)): [docs/atividade_02.md](docs/atividade_02.md)
 
 ### Avaliação
